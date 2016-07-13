@@ -1,0 +1,37 @@
+Design
+Copyright John Petersen 2015
+johnemilpeterseniii@gmail.com
+
+
+Description
+
+Design will approximate the power produced by a system of thermoelectric generators in a tube or smokestack. 
+Additionally, various monetary approximations can be made, such as throughput. The idea is to assist
+engineers in producing commercially viable thermoelectric generators. Thermal conductivity, resistivity, and 
+Seebeck coefficient of your bulk thermoelectric material, as functions of temperature, are the only input data 
+needed for this simulation. Other inputs are parameters.
+
+
+How to use this software
+
+Before using this software, it is imperative that:
+kappa_func_T(), Seebeck_func_T(), rho_func_T(), and Tau() are defined by YOU in the file integrate.cpp.
+They must be defined as polynomials in c++ language, so fit your data to polynomials before using this software.
+Example polynomials are included already.
+
+The file named "options" contains input parameters. Only the numeric values should be changed for your system.
+Heat fins refer to the "fins" on a heat sink. It is assumed that 2 heat sinks accompany each thermoelectric
+generator (TEG): one to absorb heat and another to dissipate it. 
+
+
+How to compile (in linux)
+
+The boost, tnt, and jama libraries need to be included when compiling using g++. 
+Alter the makefile and header locations to your situation.
+make
+
+
+About half of this work is based off of the following reference:
+
+Kim, et al, Relationship between thermoelectric figure of merit and energy conversion efficiency,
+PNAS (July 2015), vol 112, no. 27, pg 8205.
